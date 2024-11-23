@@ -12,22 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
         "Earth rotates on its axis once every 24 hours, which gives us day and night, and it orbits the Sun once every 365.25 days, which defines our year."
     ];
 
-    const factsList = document.getElementById('facts-list');
+    const factDisplay = document.getElementById('fact-display');
+    const generateFactButton = document.getElementById('generate-fact');
 
-    facts.forEach((fact, index) => {
-        const listItem = document.createElement('li');
-        listItem.textContent = `Fact ${index + 1}`;
-        listItem.addEventListener('click', () => {
-            const detail = listItem.querySelector('.detail');
-            if (detail) {
-                detail.classList.toggle('hidden');
-            } else {
-                const detail = document.createElement('div');
-                detail.textContent = fact;
-                detail.classList.add('detail');
-                listItem.appendChild(detail);
-            }
-        });
-        factsList.appendChild(listItem);
+    generateFactButton.addEventListener('click', () => {
+        const randomIndex = Math.floor(Math.random() * facts.length);
+        factDisplay.textContent = facts[randomIndex];
     });
 });
