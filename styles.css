@@ -1,43 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    font-family: 'VT323', monospace;
+    background-color: #000;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    color: #0f0;
 }
 
 .container {
+    background-color: #000;
+    border: 3px solid #0f0;
+    padding: 2rem;
     text-align: center;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    width: 500px;
+    box-shadow: 0 0 10px #0f0, 0 0 20px #0f0;
+}
+
+h1 {
+    font-family: 'Press Start 2P', cursive;
+    color: #0f0;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    text-shadow: 2px 2px #0a0;
 }
 
 .buttons {
-    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
 }
 
 button {
-    margin: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
+    background-color: #000;
+    color: #0f0;
+    border: 2px solid #0f0;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
     cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: white;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+    font-family: 'VT323', monospace;
+    text-transform: uppercase;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #0f0;
+    color: #000;
 }
 
 .fact-display {
-    font-size: 18px;
-    color: #333;
-    margin-top: 20px;
+    background-color: #000;
+    border: 2px solid #0f0;
+    padding: 1.5rem;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: #0f0;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px #0f0;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .fact-display {
+        font-size: 1.1rem;
+        min-height: 120px;
+    }
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.fact-display::after {
+    content: '|';
+    animation: blink 1s infinite;
 }
