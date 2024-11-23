@@ -3,13 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Earth Fact Generator</title>
+    <title>Fun Facts</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Random Earth Fact Generator</h1>
-    <button id="generate-fact">Generate Random Fact</button>
-    <div id="fact-display" class="fact-display"></div>
+    <div class="container">
+        <h1>Fun Facts</h1>
+        <div class="buttons">
+            <button onclick="showFact('animal')">Animal Behaviors</button>
+            <button onclick="showFact('food')">Food Facts</button>
+            <button onclick="showFact('record')">Record-Breaking Feats</button>
+        </div>
+        <div id="fact-display" class="fact-display">
+            Click a button to see a fun fact!
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
